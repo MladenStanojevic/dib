@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="title">
+    <h1>Foto albumi familije Marković</h1>
+    <div class="aaa">
+      <button (click)="switchView('grid')" [ngClass]="{'disabled': view == 'grid'}">Grid</button>
+      <button (click)="switchView('list')" [ngClass]="{'disabled': view == 'list'}">List</button>
+    </div>
+  </div>
+  <div class="albums">
+      <div *ngFor="let album of albums" class="img-wrap" [routerLink]="['/photos', album.id]">
+        <app-album [view]="view" [data]="album"></app-album>
+      </div>
+  </div>
+</div>
